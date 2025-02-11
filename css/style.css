@@ -1,0 +1,220 @@
+
+    /* التنسيقات العامة */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Cairo', 'Segoe UI', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #fff5f5 0%, #fff0f7 100%),
+                    url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(25)"><rect x="40" y="0" width="20" height="100" fill="%23ffd6e8"/><circle cx="30" cy="30" r="15" fill="%23ffb3d9" opacity="0.6"/><path d="M60 50 Q70 30 80 50 T100 50" fill="%23ff80bf" opacity="0.4"/></g></svg>');
+        line-height: 1.8;
+        min-height: 100vh;
+    }
+
+    /* الهيدر مع تأثير الزجاج المصقول */
+    .header {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(8px);
+        color: #7a2b58;
+        text-align: center;
+        padding: 120px 20px;
+        position: relative;
+        border-bottom: 2px solid rgba(122, 43, 88, 0.1);
+        box-shadow: 0 10px 30px rgba(122, 43, 88, 0.05);
+    }
+
+    .header h1 {
+        font-size: 3em;
+        margin-bottom: 10px;
+        letter-spacing: -2px;
+        font-family: 'Lemonada', cursive;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    }
+
+    .header p {
+        font-size: 1.2em;
+        opacity: 0.9;
+    }
+
+    /* بطاقات محتوى أنيقة */
+    .content-section {
+        padding: 60px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        padding: 35px;
+        margin: 25px 0;
+        box-shadow: 0 8px 32px rgba(122, 43, 88, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 40px rgba(122, 43, 88, 0.15);
+    }
+
+    .card h2 {
+        color: #9e3d6e;
+        margin-bottom: 20px;
+        border-right: 4px solid #ffb3d9;
+        padding-right: 15px;
+    }
+
+    /* معرض الصور مع إطار زهري */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        border: 2px solid transparent;
+        box-shadow: 0 5px 15px rgba(122, 43, 88, 0.1);
+    }
+
+    .gallery img:hover {
+        transform: scale(1.08) rotate(-1deg);
+        border-color: #ff80bf;
+    }
+
+    /* التكيف مع الهواتف */
+    @media (max-width: 768px) {
+        .header {
+            padding: 80px 15px;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+        }
+
+        .card {
+            padding: 25px;
+        }
+
+        .gallery img {
+            height: 200px;
+        }
+    }
+      /* تصميم الكتاب */
+.book {
+  position: relative;
+  background: linear-gradient(145deg, #fff7fb 0%, #fff0f5 100%);
+  width: 300px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(158, 61, 110, 0.15);
+  transform: rotate(1deg);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  border: 1px solid rgba(255, 182, 193, 0.3);
+}
+
+.book::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 60px;
+  height: 60px;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ff80bf" d="M12 2C15.9 2 19 5.1 19 9c0 2.4-1.2 4.5-3 5.7V21H9v-6.3C7.2 13.5 6 11.4 6 9c0-3.9 3.1-7 7-7zm0 2c-2.8 0-5 2.2-5 5 0 2.1 1.2 3.8 3 4.6V19h4v-5.4c1.8-.8 3-2.5 3-4.6 0-2.8-2.2-5-5-5z"/></svg>');
+  opacity: 0.15;
+}
+
+.book::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 128, 191, 0.05);
+  border-radius: 50%;
+}
+
+.book:hover {
+  transform: rotate(0.5deg) translateY(-5px);
+  box-shadow: 0 20px 50px rgba(158, 61, 110, 0.25);
+}
+
+/* محتوى الكتاب */
+.book-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 192, 203, 0.2);
+}
+
+.book-title {
+  font-family: 'Lemonada', cursive;
+  color: #7a2b58;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px dashed #ffb3d9;
+  padding-bottom: 10px;
+}
+
+.book-text {
+  color: #5a3a4a;
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1.1em;
+}
+
+/* الشريط الزهري */
+.ribbon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.ribbon::before {
+  content: '✿';
+  position: absolute;
+  font-size: 2.5em;
+  color: #ff80bf;
+  transform: rotate(-25deg);
+  text-shadow: 2px 2px 4px rgba(122, 43, 88, 0.2);
+}
+
+/* التكيف مع الهواتف */
+@media (max-width: 768px) {
+  .book {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .book-content {
+    padding: 15px;
+  }
+
+  .book-title {
+    font-size: 1.5em;
+  }
+}
